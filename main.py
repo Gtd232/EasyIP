@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 
 @app.route('/api/Get/IP')
-def Get_IP():
+def get_ip():  # 虽然感觉用大写好点，但编辑器还是推荐我用小写/滑稽
     # 如果使用Nginx，请使用以下代码：
     """
     ip = request.headers['X-Forwarded-For']
