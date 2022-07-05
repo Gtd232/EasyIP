@@ -25,9 +25,12 @@ def Get_IP():
     """
     ip = request.remote_addr
     response = urllib.request.urlopen('http://ip-api.com/json/'+ip).read().decode('utf-8')
-    with open('./Get_IP/logs/'+request.args.get('id')+'.log','a', encoding='ASCII') as f:
-        f.write(strftime('%Y-%m-%d %H:%M:%S', localtime())+'  '+ip+response+'\n')
-    return '唔唔唔'
+    if not bool(request.args.get('id'))
+        with open('./Get_IP/logs/'+request.args.get('id')+'.log','a', encoding='ASCII') as f:
+            f.write(strftime('%Y-%m-%d %H:%M:%S', localtime())+'  '+ip+response+'\n')
+        return '唔唔唔'
+    else:
+        return '唔唔唔你知不知你没加参数唔唔唔'
 
 
 if __name__ == '__main__':
