@@ -32,5 +32,15 @@ def get_ip():  # 虽然感觉用大写好点，但编辑器还是推荐我用小
         return '唔唔唔你知不知你没加参数唔唔唔'
 
 
+@app.route('/api/See/IP')
+def see_ip():  # 虽然感觉用大写好点，但编辑器还是推荐我用小写/滑稽
+    if bool(request.args.get('id')):
+        with open('./Get_IP/logs/' + request.args.get('id') + '.log', 'r', encoding='ASCII') as f:
+            fi = f.read()
+        return fi
+    else:
+        return '唔唔唔你知不知你没加参数唔唔唔'
+
+
 if __name__ == '__main__':
     app.run()
